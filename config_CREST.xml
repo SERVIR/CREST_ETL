@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings>
+    <ConfigObjectCollection>
+        <ConfigObject>
+            <Name>CREST Settings</Name>
+            <Temporary_Scratch_Directory>Z:\ETLscratch\CREST</Temporary_Scratch_Directory>
+            <Mosaic_Dateset_Output_Directory>D:\SERVIR\ConnectionFiles\PostgreSQL\servir@servir_owner.sde</Mosaic_Dateset_Output_Directory> 
+            <Raster_Final_Output_Location>D:\SERVIR\Data\Africa\CREST</Raster_Final_Output_Location>
+            <Archive_Interval>30 days</Archive_Interval> <!-- Normally set to 30 days -->
+            <FileName_DateFormat>%Y%m%d%H</FileName_DateFormat>
+            <Query_DateFormat>%Y-%m-%d %H:00:00</Query_DateFormat>
+            <Logger_Output_Location>D:\Logs\ETL_Logs\CREST</Logger_Output_Location>   <!-- D:\temp\ETL_Logs -->
+            <Logger_Prefix_Variable>CREST_ScriptSession</Logger_Prefix_Variable>
+            <Logger_Num_Of_Days_To_Keep_Log>30</Logger_Num_Of_Days_To_Keep_Log>
+            <Extract_Type>S3</Extract_Type>
+            <Extract_Range>LATEST</Extract_Range>
+            <Extract_FileExtension>zip</Extract_FileExtension>
+            <Extract_FTP_ServerLocation>ftp.nsstc.uah.edu</Extract_FTP_ServerLocation>
+            <Extract_FTP_UserName>anonymous</Extract_FTP_UserName>
+            <Extract_FTP_Password>anonymous</Extract_FTP_Password>
+            <Extract_FTP_Directory>/outgoing/fdelgado/CREST</Extract_FTP_Directory>
+            <CREST_pgdb_Host>localhost</CREST_pgdb_Host>
+            <CREST_pgdb_DBName>CREST</CREST_pgdb_DBName>
+			<CREST_pgdb_UserID>YOUR_DB_ID</CREST_pgdb_UserID>
+			<CREST_pgdb_UserPass>YOUR_DB_PASSWORD</CREST_pgdb_UserPass>
+
+            <!-- If the machine this script is running on is part of the same amazon account as the s3 to access, Set this option to 1.  If the s3 connection fails, set this to 0 and fill out the credentials in the settings below. -->
+            <s3_UseLocal_IAM_Role>1</s3_UseLocal_IAM_Role> <!-- This should be set to 1 -->
+            <s3_BucketName>bucket.servirglobal.net</s3_BucketName>
+            <s3_BucketRootPath>https://bucket.servirglobal.net.s3.amazonaws.com/</s3_BucketRootPath>
+			<s3_UserName>YOUR_USERNAME</s3_UserName>
+            <s3_AccessKeyID>YOUR_ACCESS_KEY_ID</s3_AccessKeyID>
+            <s3_SecretAccessKey>YOUR_ACCESS_KEY</s3_SecretAccessKey>
+            
+			<s3_PathTo_ASC_Files>/regions/africa/data/eodata/crest/asc</s3_PathTo_ASC_Files>
+            <s3_PathTo_TIF_Files>/regions/africa/data/eodata/crest/TIF</s3_PathTo_TIF_Files>
+
+            <Is_Download_And_Copy_TIF>1</Is_Download_And_Copy_TIF>
+
+            <Is_Get_LineItem_QueryDetailLog>0</Is_Get_LineItem_QueryDetailLog>
+
+			<Is_Detailed_Logging>0</Is_Detailed_Logging>
+
+        </ConfigObject>
+
+    </ConfigObjectCollection>
+
+</Settings>
